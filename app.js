@@ -8,7 +8,7 @@ import bookingsRouter from "./routes/booking-routes";
 import cors from "cors";
 dotenv.config();
 const app = express();
-
+const PORT = process.env.PORT || 5000
 // middlewares
 app.use(cors());
 app.use(express.json());
@@ -22,7 +22,7 @@ mongoose
     `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.pq0kw.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(() =>
-    app.listen(5000, () =>
+    app.listen(PORT, () =>
       console.log("Connected To Database And Server is running")
     )
   )
